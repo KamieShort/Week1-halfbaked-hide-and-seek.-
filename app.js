@@ -35,10 +35,9 @@ boulderButton.addEventListener('click', () => {
     const answer = hidingPlaces[hidingSpot];
     handleGuess(answer, 'boulder');
 });
-function handleGuess(correctSpot, userGuess){;
+function handleGuess(correctSpot, userGuess){
     // reset the styles
-    hidingPlaces.classList.remove('.face');
-    hidingPlaces.classList.remove('.face');
+    document.querySelectorAll('hidingPlaces').classlist.toggle('face');
     // then increment the guesses
     let total = 0;
     // then grab the appropriate container element for the correct guess from the DOM
