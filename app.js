@@ -35,8 +35,7 @@ boulderButton.addEventListener('click', () => {
     const answer = hidingPlaces[hidingSpot];
     handleGuess(answer, 'boulder');
 });
-
-function handleGuess(userGuess, correctSpot) {
+function handleGuess(correctSpot, userGuess){;
     // reset the styles
     hidingPlaces.classList.remove('.face');
     hidingPlaces.classList.remove('.face');
