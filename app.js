@@ -41,40 +41,23 @@ function handleGuess(correctSpot, userGuess){
     shedContainer.classList.remove('face');
     boulderContainer.classList.remove('face');
     treeContainer.classList.remove('face');
-    //correctGuesses++;
-}
     // then increment the guesses
 
-if (userGuess === correctSpot){
-    correctGuesses++;
-    totalGuesses++;
-    winsEl.textContent = correctGuesses;
-    totalEl.textContent = totalGuesses;
-    //correctGuesses.classList.add('.face');
-    shedContainer.classList.add('face');
-    boulderContainer.classList.add('face');
-    treeContainer.classList.add('face');
+    if (userGuess === correctSpot){
+        correctGuesses++;
+        totalGuesses++;
 
-} else { 
-    totalGuesses++;
-    lossesEl.textContent = totalGuesses - correctGuesses;
-} 
+        const correctHidingPlaceEl = document.getElementById(`${correctSpot}-container`);
+        correctHidingPlaceEl.classList.add('face');
 
-//if (userGuess === 'boulder') {
-    //boulder.classList.add('face');
-    //correctGuesses++;
-    //totalGuesses++;
-    //winsEl.textContent = correctGuesses;
-    //totalEl.textContent = totalGuesses;
-//} else if (userGuess === 'tree') {
-    //tree.classList.add ('face');
-    //totalGuesses++;
-//} else {
- //   (userGuess === 'shed');
-  //  tree.classList.add ('face');
-  //  totalGuesses++;
-  //  lossesEl.textContent = totalGuesses - correctGuesses;
-//}
+        winsEl.textContent = correctGuesses;
+        totalEl.textContent = totalGuesses;
+   
+    } else { 
+        totalGuesses++;
+        lossesEl.textContent = totalGuesses - correctGuesses;
+    }
+}
 
 
 
