@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable no-unused-vars */
 // import functions and grab DOM elements
 const shedButton = document.getElementById('shed-button');
@@ -37,24 +38,46 @@ boulderButton.addEventListener('click', () => {
 });
 function handleGuess(correctSpot, userGuess){
     // reset the styles
-    shedContainer.classList.remove('hidingPlaces');
-    boulderContainer.classList.remove('hidingPlaces');
-    treeContainer.classList.remove('hidingPlaces');
+    shedContainer.classList.remove('face');
+    boulderContainer.classList.remove('face');
+    treeContainer.classList.remove('face');
+    //correctGuesses++;
+}
     // then increment the guesses
 
-    //const correctHidingPlaceEL = document.getElementById $
+if (userGuess === correctSpot){
+    correctGuesses++;
+    totalGuesses++;
+    winsEl.textContent = correctGuesses;
+    totalEl.textContent = totalGuesses;
+    //correctGuesses.classList.add('.face');
+    shedContainer.classList.add('face');
+    boulderContainer.classList.add('face');
+    treeContainer.classList.add('face');
 
-    if (userGuess === correctSpot){
-        correctGuesses++;
-        totalGuesses++;
-        winsEl.textContent = correctGuesses;
-        totalEl.textContent = totalGuesses;
-        correctGuesses.classList.add('.face');
-    } else {
-        totalGuesses++;
-        lossesEl.textContent = totalGuesses - correctGuesses;
-    }
-}
+} else { 
+    totalGuesses++;
+    lossesEl.textContent = totalGuesses - correctGuesses;
+} 
+
+//if (userGuess === 'boulder') {
+    //boulder.classList.add('face');
+    //correctGuesses++;
+    //totalGuesses++;
+    //winsEl.textContent = correctGuesses;
+    //totalEl.textContent = totalGuesses;
+//} else if (userGuess === 'tree') {
+    //tree.classList.add ('face');
+    //totalGuesses++;
+//} else {
+ //   (userGuess === 'shed');
+  //  tree.classList.add ('face');
+  //  totalGuesses++;
+  //  lossesEl.textContent = totalGuesses - correctGuesses;
+//}
+
+
+
 
     // then grab the appropriate container element for the correct guess from the DOM
     // then add the face class to that element so that the face shows up
